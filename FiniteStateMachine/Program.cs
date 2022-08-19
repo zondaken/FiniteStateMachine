@@ -24,7 +24,11 @@ namespace FiniteStateMachine
                         oldState.Exit();
                         state.Enter();
                     }
-                } while (oldState != state);
+                    else
+                    {
+                        break;
+                    }
+                } while (true);
 
                 try
                 {
