@@ -19,7 +19,9 @@ namespace FiniteStateMachine
                     oldState = state;
                     state = state.GetNewState();
 
-                    if (oldState != state)
+                    bool stateHasSwapped = oldState != state;
+                    
+                    if (stateHasSwapped)
                     {
                         oldState.Exit();
                         state.Enter();
